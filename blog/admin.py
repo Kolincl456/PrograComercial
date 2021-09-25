@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import Publicaion
+from .models import Publicacion
 
-admin.site.register(Publicaion)
+admin.site.register(Publicacion)

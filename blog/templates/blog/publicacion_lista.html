@@ -1,1 +1,12 @@
-<h1>Hola mundo</h1>
+{% extends 'blog/base.html' %}
+{% block content %} 
+    {% for publicacion in publicaciones %}
+    <div class="post">
+        <div class="date">
+            <p>publicado: {{ publicacion.fecha_publicacion}}</p>
+        </div>
+        <h2><a href=" {% url 'publicacion_detalle' pk=publicacion.pk %} ">{{publicacion.titulo}}</a></h2>
+        <p>{{ publicacion.texto|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

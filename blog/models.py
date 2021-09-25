@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Publicacion(models.Model):
+class Publicaion(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=200)
     texto = models.TextField()
@@ -19,4 +19,4 @@ class Publicacion(models.Model):
     def __str__(self):
         return self.titulo
 class Meta:
-    verbose_name_plural = 'Publicaciones'
+    verbose_name_plural = 'Publicaiones'

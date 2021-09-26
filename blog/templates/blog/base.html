@@ -5,14 +5,46 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     </head>
-    <body>
-        <div class="page-header">
+    <section class="hero is-primary is-small">
+        <div class="hero-header">
+            <nav class="navbar">
             <h1><a href="/">Django Girls Blog</a></h1>
+            </nav>
         </div>
+        <div class="navbar-end">
+            <a class="navbar-item" href="">Home</a>
+            <a class="navbar-item" href="{% url 'publicacion_nueva' %}">Ingresos</a>
+            <a class="navbar-item" href="{% url 'publicacion_borrador_lista' %}">Borradores</a>
+            <a class="navbar-item" href="{% url 'login' %}">Login</a>
+        </div>
+    
+    <div class="hero-body">
+        <div class="container has text-centered">
+            <p class="title">Blog</p>
+        </div>
+    </div>
+
+    <div class="hero-foot">
+        <nav class="tabs">
+            <div class="container">
+                <ul>
+                    <li class="is-active"><a>Overview</a></li>
+                    <li><a>Modifiers</a></li>
+                    <li><a>Grid</a></li>
+                    <li><a>Elements</a></li>
+                    <li><a>Components</a></li>
+                    <li><a>Layouts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    </section>
         <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
+            <div class="columns">
+                <div class="column is-8">
                     {% block content %}
                     {% endblock %}
                 </div>

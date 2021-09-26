@@ -1,12 +1,20 @@
 {% extends 'blog/base.html' %}
 {% block content %} 
     <div class="post">
+        <div class="box">
         {% if publicacion.fecha_publicacion %}
-            <div class="date">
+            <div class="notification is-link is-ligth">
                 {{ publicacion.fecha_publicacion}}
             </div>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'publicacion_publicar' pk=publicacion.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'publicacion_editar' pk=publicacion.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'publicacion_borrar' pk=publicacion.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{publicacion.titulo}}</h2>
         <p>{{ publicacion.texto|linebreaksbr }}</p>
+        </div>      
     </div>
 {% endblock %}
